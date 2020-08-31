@@ -33,3 +33,5 @@ As you choose the right color the <strong>New Colors</strong> option changes to 
 ## How to run? 
 Open `color_picker.html` in any browser of your choice to view the app. However, we recommend you to use Chrome+Chrome DevTools for the best debugging experience. 
 
+## Completed Bugs
+1) Easy mode
