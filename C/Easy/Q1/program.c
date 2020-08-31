@@ -36,7 +36,7 @@ int funct(n)
 
 int main()
 {
-    int num,ans
+    int num,ans;
     num=getNum();       
     ans=funct(num);
 
@@ -47,8 +47,3 @@ int main()
     ouritoa(ans,arr,10);
     printf("KEY : %u",hash(arr));
 }
-
-
-
-
-
