@@ -47,14 +47,6 @@ int solve(int arr[])
             }
        }
     }
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ",&arr[i]);
-    }
-    long long int z=(long long)arr[n-1] * (long long)arr[n-2];
-    printf("\n%d ",&arr[n-1]);
-    printf("\n%d ",&arr[n-2]);
-    printf("\n%d\n",&z);
     return arr[n-1]*arr[n-2];         /// Last two numbers
 }
 

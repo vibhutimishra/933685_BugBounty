@@ -4,10 +4,10 @@
 
     PROBLEM STATEMENT:
         You are given 5 different strings with some alphabets(a-z only).
-        
+
         Here are the sequence of steps we are doing:
             1. The program below intends to find the length of the longest palindromic substring (LPS) (APPROACH DEFINED BELOW) that can be
-            formed from the given strings (a-z only). 
+            formed from the given strings (a-z only).
             2. Then length of the LPS that can be formed from each of the string given as input is stored in an array.
             3. The HASH function then finds the sum of all  the elemnts in the array and prints a string.
             4. The string printed is your key to get the password for next file. HURRAH!!
@@ -22,8 +22,8 @@
 
                 Let str = ant
                 table[3][3] would look something like this after completion:
-                
-                                0       1       2 
+
+                                0       1       2
                                 a       n       t
 
                     0   a       1       0       0
@@ -36,32 +36,33 @@
 
     INPUT:
         All the inputs are taken from helpers.h, you do not need to give any inputs from your side.
-    
+
     OUTPUT:
         The max length of LPS for each string is stored in an array by default, you dont need to store it from your side.
-    
-    
+
+
     KEY FORMAT: XXXXXXXX29
 */
 
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include <lastlog.h>
-#include <stdc-predef.h>
 #include <string.h>
 #include <stdbool.h>
 #include "helpers.h"
 
 int main()
 {
-    const ans[10];
+    char ans[10];
     int inputArraySize = 5;
     char *str;
 
     str = malloc(2000 * sizeof(char));
-    str = inputArray[inputArraySize];
-    setArray(str);
+    for(int i=0;i<inputArraySize;i++)
+    {
+        str = inputArray[i];
+        setArray(str);
+    }
 
     printf("Key : %u\n", hash2(hash(ans)));
 
@@ -86,26 +87,29 @@ int lps(char *str)
             table[i][i + 1] = true;
             maxLength = 2;
         }
+        else
+            table[i][i+1] = false;
     }
 
     // Check for lengths greater than 2. 'k' is the length of substring
-    for (int k = 4; k <= length; ++k)
+    for (int k = 3; k <= length; ++k)
     {
         for (int i = 0; i < length - k + 1; ++i)
         {
             int j = i + k - 1;
 
             // checking for sub-string from ith index to jth index if str[i+1] to str[j-1] is a palindrome
-            if (table[i - 1][j + 1] && str[i] == str[j])
+            if (table[i + 1][j - 1] && str[i] == str[j])
             {
                 table[i][j] = true;
 
                 if (k > maxLength)
                     maxLength = k;
             }
+            else
+                table[i][j] = false;
         }
     }
-
     //Return max length of LPS
     return maxLength;
 }

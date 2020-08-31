@@ -3,13 +3,13 @@ PROBLEM STATEMENT:
     Agent Mickey is on a mission to arrange his pets in a particular order for inspection by Professor Ludwig Von Drake.
     There happens to be a slight problem. His 'sortinator3000' machine is not working as the evil Peter Pete Sr. has messed with its code.
     Mickey has to get this machine to work as soon as possible.
-    His pets are named with just a single letter like 'a', 'c', 'b' and so on. 
-    After sorting the pets in order according to their names, the pets with the same name has to be grouped together. 
+    His pets are named with just a single letter like 'a', 'c', 'b' and so on.
+    After sorting the pets in order according to their names, the pets with the same name has to be grouped together.
     For example: If there are four pets with the name 'a', it should be grouped as 'a4' instead of 'aaaa'.
     It is upto you to save Mickey!
 INPUT:
     The inputs are taken from a file named data.txt. You are not expected to make any changes to it.
-OUTPUT: 
+OUTPUT:
     The output is a string in the format specified in the problem statement.
 
 Key: XXXX58
@@ -35,7 +35,7 @@ void Sort(char arr[], int n)
     {
         for (j = 0; j < n - i - 1; j++)
         {
-            if (arr[i] > arr[i + 1])
+            if (arr[j] > arr[j + 1])
             {
                 swap(&arr[j], &arr[j + 1]);
                 p++; //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
@@ -70,7 +70,7 @@ void countDups(char orig[], int count[], int n, int newLength)
     for (i = 0; i < newLength; i++)
     {
         count[i] = 0;
-        p += count[i] //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
+        p += count[i]; //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
     }
 
     for (i = 0; i < n - 1; i++)
@@ -81,16 +81,18 @@ void countDups(char orig[], int count[], int n, int newLength)
         }
         else
         {
+            ++count[j];
             p--; //Just a counter, ignore this  ///// DO NOT CHANGE THIS LINE /////
             j++;
         }
     }
+    ++count[j]; //as aaaa should be converted to a4 not a3
 }
 
 void Group(char arr[], int n)
 {
     int newLength, i = 0;
-    int orig[n];
+    char orig[n];
     for (i = 0; i < n; i++)
     {
         orig[i] = arr[i];
