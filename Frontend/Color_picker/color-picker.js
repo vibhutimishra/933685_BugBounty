@@ -37,8 +37,9 @@ function setupSquares() {
             }
             else {
                 messageDisplay.textContent = "Try Again!!";
+                messageDisplay.style.color = "black";
             }
-            messageDisplay.style.color = "black";
+           
         })
     }
 }
@@ -71,12 +72,14 @@ function setupButtons() {
     easyBtn.addEventListener("click", function () {
 
         //to change the background of the buttons
-        easyBtn.classList.add("selected");
         hardBtn.classList.remove("selected");
+        easyBtn.classList.add("selected");
+        
 
-        resetGame(3);
+        
         for (var i = 3; i <= 5; i++)
             squares[i].style.display = "none";
+        resetGame(3);
         difficultyLevel = "Easy";
     });
 
