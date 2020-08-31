@@ -35,3 +35,7 @@ Open `color_picker.html` in any browser of your choice to view the app. However,
 
 ## Completed Bugs
 1) Easy mode
+2) when chosen wrong color
+3) when chosen right color
+4) to play again
+5) new game
