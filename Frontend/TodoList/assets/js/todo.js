@@ -13,24 +13,24 @@ $("ul").on("click",".fa-trash-alt",function(event){
 });
 
 // when add button is clicked
-$(".fa-plus").click(function(){
+$(".fa-minus").click(function(){
     $("input").hide();
-    $(".fa-plus").hide();
-    $(".fa-minus").show();
+    $(".fa-minus").hide();
+    $(".fa-plus").show();
     
 });
 
-$(".fa-minus").click(function(){
+$(".fa-plus").click(function(){
     $("input").show();
-    $(".fa-plus").show();
-    $(".fa-minus").hide();
+    $(".fa-minus").show();
+    $(".fa-plus").hide();
 });
 
 
 $("input[type='text']").keypress(function(event){
     if(event.which===13)
     {
-        $("ul").append("<li ><span><i class='fa fa-trash-alt'></i></span> " + $(this).val() + "<span style='float:right'><i class='fa fa-heart'></i></span></li>");
+        $(".to_do").append("<li ><span><i class='fa fa-trash-alt'></i></span> " + $(this).val() + "<span style='float:right'><i class='fa fa-heart'></i></span></li>");
         $(this).val("");
     }
 });

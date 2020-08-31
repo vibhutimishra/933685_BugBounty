@@ -51,24 +51,25 @@
 
     <body>
         <div style="display:flex">
-                <div id="container">
-            <h1>To-do List<i class="fa fa-plus" style="display:none"></i><i class="fa fa-minus" ></i></h1>
-            <ul>
-                <li><span><i class="fas fa-trash-alt"></i></span> Coding<span style="float:right"><i class="fa fa-heart"></i></span></li>
-                <li><span><i class="fas fa-trash-alt"></i></span> Sleeping<span style="float:right"><i class="fa fa-heart"></i></span></li>
-                <li><span><i class="fas fa-trash-alt"></i></span> Eating<span style="float:right"><i class="fa fa-heart"></i></span></li>
-            </ul>
-            <input id="input" type="text" placeholder="Add new todo" style="display:none">
+            <div class="container">
+                <h1>To-do List<i class="fa fa-plus " ></i><i class="fa fa-minus" style="display:none"></i></h1>
+                <input id="input" type="text" placeholder="Add new todo" style="display:none">
+                <ul class="to_do">
+                    <li><span><i class="fas fa-trash-alt"></i></span> Coding<span style="float:right"><i class="fa fa-heart"></i></span></li>
+                    <li><span><i class="fas fa-trash-alt"></i></span> Sleeping<span style="float:right"><i class="fa fa-heart"></i></span></li>
+                    <li><span><i class="fas fa-trash-alt"></i></span> Eating<span style="float:right"><i class="fa fa-heart"></i></span></li>
+                </ul>
+                
+            </div>
+            <div class="container">
+                <h1>Favourites</h1>
+                <ul class="fav-list">
+                    <li><span><i class="fas fa-trash-alt"></i></span> Coding</li>
+                    <li><span><i class="fas fa-trash-alt"></i></span> Sleeping</li>
+                    <li><span><i class="fas fa-trash-alt"></i></span> Eating</li>
+                </ul>
+            </div>
         </div>
-        <div id="container">
-            <h1>Favourites</h1>
-            <ul class="fav-list">
-                <li><span><i class="fas fa-trash-alt"></i></span> Coding</li>
-                <li><span><i class="fas fa-trash-alt"></i></span> Sleeping</li>
-                <li><span><i class="fas fa-trash-alt"></i></span> Eating</li>
-            </ul>
-        </div>
-    </div>
         <script type="text/javascript" src="assets/js/todo.js"></script>
         <canvas id="myCanvas" resize></canvas>
     </body>

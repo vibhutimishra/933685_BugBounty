@@ -31,3 +31,6 @@ Given an HTML file,a CSS file and a JS file, create a project similar to the tar
 
 ## How to run? 
 Open `todo.html` in any browser of your choice to view the app. However, we recommend you to use Chrome+Chrome DevTools for the best debugging experience. 
+
+## debug done
+all the debugs done
