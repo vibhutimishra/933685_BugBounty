@@ -31,13 +31,15 @@ function setupSquares() {
             //when u win the game
             if (this.style.backgroundColor == pickedColor) {
                 messageDisplay.textContent = "You Found!!:-)";
-                changeColor(pickedColor);
+
                 h1.style.backgroundColor = pickedColor;
                 newGame.textContent = "Play Again";
+                changeColor(pickedColor);
             }
             else {
                 messageDisplay.textContent = "Try Again!!";
                 messageDisplay.style.color = "black";
+                this.style.background="black";
             }
            
         })
@@ -47,7 +49,7 @@ function setupSquares() {
 
 function setupButtons() {
     //when hovering the mouse over newcolor
-    newGame.addEventListener("mousehover", function () {
+    newGame.addEventListener("mouseover", function () {
         newGame.style.background = "rgb(2, 160, 194)";
         newGame.style.color = "white";
     })
@@ -67,6 +69,14 @@ function setupButtons() {
             //6 squares are required
             resetGame(6);
     })
+    //when hover on easy 
+    easyBtn.addEventListener("mouseover",function(){
+        easyBtn.classList.add("selected");
+    })
+    //hard button hover
+    hardBtn.addEventListener("mouseover",function(){
+        hardBtn.classList.add("selected");
+    })
 
     //when easy button is selected
     easyBtn.addEventListener("click", function () {
@@ -76,6 +86,7 @@ function setupButtons() {
         easyBtn.classList.add("selected");
         
 
+        
         
         for (var i = 3; i <= 5; i++)
             squares[i].style.display = "none";
@@ -98,9 +109,9 @@ function setupButtons() {
 }
 
 // for changing the color of each square
-function changeColor(color) {
-    for (var i = 0; i < colors.length; i++)
-        squares[i].style.color = color;
+function changeColor(colour) {
+    for (var i = 0; i < squares.length; i++)
+        squares[i].style.background = colour;
 }
 
 //for picking a random color
@@ -132,8 +143,8 @@ function resetGame(number) {
     colors = generateRandomColors(number);
 
     //to change the colors of the squares
-    for (var i = 0; i < colors.length; i++)
-        squares.style.background = colors[i];
+    for (var i = 0; i < number; i++)
+        squares[i].style.background = colors[i];
 
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
